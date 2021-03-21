@@ -5,7 +5,8 @@ public class ArrayRemoveDuplicates {
     private static final String SEPARATOR = ",";
 
     public static void main(String[] args) {
-        int[] array = {0, 0, 1, 1, 2, 2, 3, 3, 4}; // Input an ASC sorted(!) array with duplicates
+        // Input an ASC sorted(!) array with duplicates
+        int[] array = {0, 0, 1, 1, 2, 2, 3, 3, 4}; 
         System.out.println("Old array = " + Arrays.toString(array));
         int[] arrayWithOutDuplicates = removeDuplicates(array);
         System.out.println("New array = " + Arrays.toString(arrayWithOutDuplicates));
