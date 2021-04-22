@@ -5,28 +5,18 @@ public class PlusOne {
         int[] numbers1 = {9,8,7,6,5,4,3,2,1,0};
         int[] numbersWithAPlusOne1 = plusOne(numbers1);
         System.out.println(Arrays.toString(numbersWithAPlusOne1));
-
     }
 
     private static int[] plusOne (int[] digits){
-        StringBuilder stringBuilder = new StringBuilder();
-
-        for (int value : digits) {
-            stringBuilder.append(digits[value]).append(";");
+          for (int i = digits.length - 1; i >= 0; i--) {
+            if (digits[i] != 9) {
+                digits[i]++;
+                return digits;
+            }
+            digits[i] = 0;
         }
-        String[] digitsToString = stringBuilder.toString().split(";");
-        int x = Integer.parseInt(String.valueOf(digitsToString));
-        x++;
-        System.out.println(x);
-        String temp = Integer.toString(x);
-        System.out.println(temp);
-        int[] result = new int[temp.length()];
-        for (int index = 0; index < result.length; index++) {
-//            result[index] = temp.charAt(index) - '0';
-            result[index] = Character.getNumericValue(temp.charAt(index));
-        }
+        int[] result = new int[digits.length + 1];
+        result[0] = 1;
         return result;
     }
-
-
 }
